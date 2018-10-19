@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html class="k-ff k-ff39"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!--[if lte IE 9]>
+     <script src="~/Scripts/respond.min.js"></script>
+     <script src="~/Scripts/html5shiv.js"></script>
+    <![endif]-->
+
+    <title>病区视图 - 360视图 v2.2 Beta</title>
+    <link href="%E7%97%85%E5%8C%BA%E8%A7%86%E5%9B%BE%20-%E5%A4%9A%E6%82%A3%E8%80%85-%20360%E8%A7%86%E5%9B%BE%20v2.2%20Beta_files/Site.css" rel="stylesheet">
+    <link href="%E7%97%85%E5%8C%BA%E8%A7%86%E5%9B%BE%20-%E5%A4%9A%E6%82%A3%E8%80%85-%20360%E8%A7%86%E5%9B%BE%20v2.2%20Beta_files/metro-bootstrap.css" rel="stylesheet">
+    <link href="%E7%97%85%E5%8C%BA%E8%A7%86%E5%9B%BE%20-%E5%A4%9A%E6%82%A3%E8%80%85-%20360%E8%A7%86%E5%9B%BE%20v2.2%20Beta_files/kendo_002.css" rel="stylesheet">
+    <link href="%E7%97%85%E5%8C%BA%E8%A7%86%E5%9B%BE%20-%E5%A4%9A%E6%82%A3%E8%80%85-%20360%E8%A7%86%E5%9B%BE%20v2.2%20Beta_files/kendo.css" rel="stylesheet">
+    <link href="%E7%97%85%E5%8C%BA%E8%A7%86%E5%9B%BE%20-%E5%A4%9A%E6%82%A3%E8%80%85-%20360%E8%A7%86%E5%9B%BE%20v2.2%20Beta_files/default.css" rel="stylesheet">
+    <link href="%E7%97%85%E5%8C%BA%E8%A7%86%E5%9B%BE%20-%E5%A4%9A%E6%82%A3%E8%80%85-%20360%E8%A7%86%E5%9B%BE%20v2.2%20Beta_files/jquery.css" rel="stylesheet">
+    <script src="%E7%97%85%E5%8C%BA%E8%A7%86%E5%9B%BE%20-%E5%A4%9A%E6%82%A3%E8%80%85-%20360%E8%A7%86%E5%9B%BE%20v2.2%20Beta_files/jquery-1.js"></script>
+    <script src="%E7%97%85%E5%8C%BA%E8%A7%86%E5%9B%BE%20-%E5%A4%9A%E6%82%A3%E8%80%85-%20360%E8%A7%86%E5%9B%BE%20v2.2%20Beta_files/patientview.js"></script>
+    <link href="%E7%97%85%E5%8C%BA%E8%A7%86%E5%9B%BE%20-%E5%A4%9A%E6%82%A3%E8%80%85-%20360%E8%A7%86%E5%9B%BE%20v2.2%20Beta_files/JQuery.css" rel="stylesheet">
+    <script src="%E7%97%85%E5%8C%BA%E8%A7%86%E5%9B%BE%20-%E5%A4%9A%E6%82%A3%E8%80%85-%20360%E8%A7%86%E5%9B%BE%20v2.2%20Beta_files/JQuery.js"></script>
+    <script src="%E7%97%85%E5%8C%BA%E8%A7%86%E5%9B%BE%20-%E5%A4%9A%E6%82%A3%E8%80%85-%20360%E8%A7%86%E5%9B%BE%20v2.2%20Beta_files/TableSort.js"></script>
+    <script src="%E7%97%85%E5%8C%BA%E8%A7%86%E5%9B%BE%20-%E5%A4%9A%E6%82%A3%E8%80%85-%20360%E8%A7%86%E5%9B%BE%20v2.2%20Beta_files/store.js"></script>
+    <script src="%E7%97%85%E5%8C%BA%E8%A7%86%E5%9B%BE%20-%E5%A4%9A%E6%82%A3%E8%80%85-%20360%E8%A7%86%E5%9B%BE%20v2.2%20Beta_files/jquery.js"></script>
+    <script src="%E7%97%85%E5%8C%BA%E8%A7%86%E5%9B%BE%20-%E5%A4%9A%E6%82%A3%E8%80%85-%20360%E8%A7%86%E5%9B%BE%20v2.2%20Beta_files/CommonJs.js"></script>
+    <script src="%E7%97%85%E5%8C%BA%E8%A7%86%E5%9B%BE%20-%E5%A4%9A%E6%82%A3%E8%80%85-%20360%E8%A7%86%E5%9B%BE%20v2.2%20Beta_files/kendo_002.js"></script>
+<script src="%E7%97%85%E5%8C%BA%E8%A7%86%E5%9B%BE%20-%E5%A4%9A%E6%82%A3%E8%80%85-%20360%E8%A7%86%E5%9B%BE%20v2.2%20Beta_files/kendo_003.js"></script>
+<script src="%E7%97%85%E5%8C%BA%E8%A7%86%E5%9B%BE%20-%E5%A4%9A%E6%82%A3%E8%80%85-%20360%E8%A7%86%E5%9B%BE%20v2.2%20Beta_files/kendo.js"></script>
+
+
+
+</head>
+<body>
+    <div id="Main_Content">
+        
+
+<script src="%E7%97%85%E5%8C%BA%E8%A7%86%E5%9B%BE%20-%E5%A4%9A%E6%82%A3%E8%80%85-%20360%E8%A7%86%E5%9B%BE%20v2.2%20Beta_files/moment.js"></script>
+<link href="%E7%97%85%E5%8C%BA%E8%A7%86%E5%9B%BE%20-%E5%A4%9A%E6%82%A3%E8%80%85-%20360%E8%A7%86%E5%9B%BE%20v2.2%20Beta_files/daterangepicker.css" rel="stylesheet">
+<script src="%E7%97%85%E5%8C%BA%E8%A7%86%E5%9B%BE%20-%E5%A4%9A%E6%82%A3%E8%80%85-%20360%E8%A7%86%E5%9B%BE%20v2.2%20Beta_files/daterangepicker.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var options = {
+          ranges:{
+                '今天': [moment(), moment()],
+                '昨天': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                '最近7天': [moment().subtract(6, 'days'), moment()],
+                '最近30天': [moment().subtract(29, 'days'), moment()],
+                '本月': [moment().startOf('month'), moment().endOf('month')],
+                '上月': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')],
+                '本年': [moment().startOf('year'), moment().endOf('year')]
+          },
+          locale: {
+              //direction: $('#rtl').is(':checked') ? 'rtl' : 'ltr',
+              format: 'YYYY/MM/DD',//'MM/DD/YYYY HH:mm',
+              separator: ' ~ ',
+              applyLabel: '选择',
+              cancelLabel: '取消',
+              fromLabel: '从',
+              toLabel: '到',
+              customRangeLabel: '自定义',
+              daysOfWeek: ['天', '一', '二', '三', '四', '五','六'],
+              monthNames: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+              firstDay: 1
+          },
+          showCustomRangeLabel:false,
+          alwaysShowCalendars: true,
+          applyClass: 'btn-primary'
+        };
+        var rangePicker = $('#dateRange').daterangepicker(options, function (start, end, label) { 
+            console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
+        });
+        $('.range i').click(function () {
+            $(this).parent().find('input').click();
+        });
+     
+    });
+
+
+    $(function () {
+        $("#change_Type_home").kendoDropDownList({ index: 0 });
+        //$("#AdmissionTime").kendoDropDownList();
+        //$("#AdmissionTime").data("kendoDropDownList").value("5");
+        InitHome();
+        $("#gData").height($(document).height() - 200);
+    });
+
+
+    function getGDataParam() {
+        return {
+            Type: $.trim($("#change_Type_home").data("kendoDropDownList").value()),
+            PatientName: $.trim($("#PatientName").val()),
+            VisitNumber: $.trim($("#VisitNumber").val()),
+            EMPI: $.trim($("#EMPI").val()),
+            AdmissionTimeRange: $("#dateRange").val(),
+            value: $(":hidden[name='value']").val()
+        };
+    }
+    function gDataDataBound() {
+        switch ($("#change_Type_home").data("kendoDropDownList").value()) {
+            case "1":
+                $("*[admissiontime='true']").show();
+                $("*[dischargetime='true']").hide();
+                break;
+            case "2":
+            case "3":
+                $("*[admissiontime='true']").hide();
+                $("*[dischargetime='true']").show();
+                break;
+            case "4":
+                $("*[admissiontime='true']").hide();
+                $("*[dischargetime='true']").show();
+                break;
+        }
+    }
+</script>
+<style>
+body,html
+    {
+    overflow: hidden;
+    }
+    .range {
+        position: relative;
+    }
+
+        .range i {
+            position: absolute;
+            bottom: 10px;
+            right: 24px;
+            top: auto;
+            cursor: pointer;
+        }
+</style>
+<link href="%E7%97%85%E5%8C%BA%E8%A7%86%E5%9B%BE%20-%E5%A4%9A%E6%82%A3%E8%80%85-%20360%E8%A7%86%E5%9B%BE%20v2.2%20Beta_files/font-awesome.css" rel="stylesheet">
+<div style="background-color: #003763; height:40px;  padding-left:15px;">
+    <span style="font-size:2em; color:#fff;">360视图</span>
+    <span style="color:#ff6a00">多维度查询</span>
+             
+  
+</div>
+<div class="form-group" id="HomeTableSeachForm_div" style="margin:0 10px 0 10px;">
+    <form id="HomeTableSeachForm">
+        <table class="table table-bordered " style="width:100%; margin-top:10px;" border="1" cellpadding="1" cellspacing="1">
+            <tbody><tr>
+
+                <td style="text-align: right; width: 70px;">视图：</td>
+                <td style="width:130px;">
+                    <span aria-activedescendant="change_Type_home_option_selected" aria-busy="false" aria-readonly="false" aria-disabled="false" aria-owns="change_Type_home_listbox" tabindex="0" aria-expanded="false" aria-haspopup="true" role="listbox" unselectable="on" class="k-widget k-dropdown k-header k-textbox" style="width: 120px;"><span unselectable="on" class="k-dropdown-wrap k-state-default"><span unselectable="on" class="k-input">门急诊病人</span><span unselectable="on" class="k-select"><span unselectable="on" class="k-icon k-i-arrow-s">select</span></span></span><select data-role="dropdownlist" name="Type" id="change_Type_home" class="k-textbox" style="width: 120px; display: none;"><option selected="selected" value="1">门急诊病人</option><option value="3">住院病人</option></select></span>
+                </td>
+                <td style="text-align: right; width: 100px;" id="AdmissionTime_txt">门诊时间：</td>
+                <td style="width:250px">
+                    <div class="range">
+                        <input value="2018/10/18 ~ 2018/10/18" id="dateRange" class="form-control" style="height:30px;" type="text">
+                        <i id="dataRange_icon" class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                    </div>
+                </td> 
+                <td style="text-align: right; width: 140px;">挂号序号/住院号：</td>
+                <td style="width:100px;">
+                    <input name="VisitNumber" id="VisitNumber" style="width: 100px; height: 22px; " class="k-textbox" type="text">
+                </td>
+                <td style="text-align: right; width: 70px;">EMPI：</td>
+                <td style="width:100px;">
+                    <input name="EMPI" id="EMPI" style="width: 100px; height: 22px; " class="k-textbox" type="text">
+                </td>
+                <td style="text-align: right; width:70px; ">姓名：</td>
+                <td style="width:100px;">
+                    <input value="孙伟 " id="PatientName" name="PatientName" style="width: 100px; height:22px;" class="k-textbox" type="text">
+                </td>
+    
+                
+                <td colspan="6">
+                    <a class="abutton" id="search_Btn_field" style="float:left;height:30px;width:auto; line-height:30px; padding-right:9px; padding-left:2px;">
+                        <i class="fa fa-location-arrow"></i>
+                        过滤
+                    </a>
+                    <a class="abutton" id="search_Btn" style="float: left; margin-left: 10px; height: 30px; width: 58px; line-height: 30px; padding-right: 7px; text-decoration: none; ">
+                        <i class="fa fa-search"></i>
+                        查询
+                    </a>
+
+                    
+                </td>
+            </tr>
+        </tbody></table>
+    </form>
+<input value="" name="value" type="hidden">
+    <div id="HomeTableSeachForm_Table" style="overflow:hidden;height:auto;width:auto">
+
+        <div data-role="grid" class="k-widget k-grid k-secondary" id="gData" style="height: 493px;"><div style="padding-right: 17px;" class="k-grid-header"><div data-role="resizable" class="k-grid-header-wrap"><table role="grid"><colgroup><col style="width:80px"><col style="width:130px"><col style="width:120px"><col style="width:120px"><col style="width:150px"><col style="width:150px"><col style="width:120px"><col style="width:130px"><col style="width:100px"><col style="width:100px"><col style="width:180px"><col style="width:220px"><col style="width:180px"><col style="width:220px"><col style="width:120px"><col style="width:120px"><col style="width:220px"><col style="width:220px"><col style="width:180px"><col style="width:220px"><col style="width:220px"><col style="width:220px"><col style="width:180px"><col style="width:220px"></colgroup><thead><tr><th class="k-header" data-field="VisitNumberEncoded" data-title="操作" scope="col" style="text-align: center;"><span class="k-link">操作</span></th><th class="k-header" data-field="VisitNumber" data-title="挂号序号/住院号" scope="col" style="text-align: center; font-weight: bold;"><span class="k-link">挂号序号/住院号</span></th><th class="k-header" data-field="PatientID" data-title="门诊号/病人ID" scope="col" style="text-align: center;"><span class="k-link">门诊号/病人ID</span></th><th class="k-header" data-field="Empid" data-title="EMPI" scope="col" style="text-align: center;"><span class="k-link">EMPI</span></th><th class="k-header" data-field="MRN" data-title="病案号" scope="col" style="text-align: center;"><span class="k-link">病案号</span></th><th class="k-header" data-field="PatientName" data-title="病人姓名" scope="col" style="text-align: center;"><span class="k-link">病人姓名</span></th><th class="k-header" data-field="PatientSourceName" data-title="病人属性代码" scope="col" style="text-align: center;"><span class="k-link">病人属性代码</span></th><th class="k-header" data-field="SexName" data-title="性别" scope="col" style="text-align: center;"><span class="k-link">性别</span></th><th class="k-header" data-field="DOB" data-title="出生日期" scope="col" style="text-align: center;"><span class="k-link">出生日期</span></th><th class="k-header" data-field="PatientAge" data-title="就诊年龄" scope="col" style="text-align: center;"><span class="k-link">就诊年龄</span></th><th class="k-header" data-field="SSN" data-title="身份证号" scope="col" style="text-align: center;"><span class="k-link">身份证号</span></th><th class="k-header" data-field="Address" data-title="地址" scope="col" style="text-align: center;"><span class="k-link">地址</span></th><th class="k-header" data-field="ContactPhone" data-title="联系电话" scope="col" style="text-align: center;"><span class="k-link">联系电话</span></th><th class="k-header" data-field="HomeAddress" data-title="住宅地址" scope="col" style="text-align: center;"><span class="k-link">住宅地址</span></th><th class="k-header" data-field="HomePhone" data-title="住宅电话" scope="col" style="text-align: center;"><span class="k-link">住宅电话</span></th><th class="k-header" data-field="RegisterCategoryName" data-title="挂号类型" scope="col" style="text-align: center;"><span class="k-link">挂号类型</span></th><th class="k-header" data-field="StatusName" data-title="状态代码" scope="col" style="text-align: center;"><span class="k-link">状态代码</span></th><th class="k-header" data-field="ServiceProviderDeptName" data-title="科别名称" scope="col" style="text-align: center;"><span class="k-link">科别名称</span></th><th class="k-header" data-field="HospitalServiceName" data-title="科室名称" scope="col" style="text-align: center;"><span class="k-link">科室名称</span></th><th class="k-header" data-field="MedicareCategoryName" data-title="医保类型名称" scope="col" style="text-align: center;"><span class="k-link">医保类型名称</span></th><th class="k-header" data-field="DoctorID" data-title="医生工号" scope="col" style="text-align: center;"><span class="k-link">医生工号</span></th><th class="k-header" data-field="DoctorName" data-title="医生姓名" scope="col" style="text-align: center;"><span class="k-link">医生姓名</span></th><th admissiontime="true" class="k-header" data-field="AdmissionTime" data-title="挂号时间" scope="col" style="text-align: center;"><span class="k-link">挂号时间</span></th><th dischargetime="true" class="k-header" data-field="AdmissionTime" data-title="入院时间" scope="col" style="text-align: center; display: none;"><span class="k-link">入院时间</span></th><th dischargetime="true" class="k-header" data-field="DischargeTime" data-title="出院时间" scope="col" style="text-align: center; display: none;"><span class="k-link">出院时间</span></th><th class="k-header" data-field="OPDDiagnosis" data-title="诊断名称" scope="col" style="text-align: center;"><span class="k-link">诊断名称</span></th></tr></thead></table><div style="top: 0px; left: 207px; height: 31px; width: 9px; display: none;" class="k-resize-handle"></div></div></div><div class="k-grid-content" style="height: 428px;"><table role="grid"><colgroup><col style="width:80px"><col style="width:130px"><col style="width:120px"><col style="width:120px"><col style="width:150px"><col style="width:150px"><col style="width:120px"><col style="width:130px"><col style="width:100px"><col style="width:100px"><col style="width:180px"><col style="width:220px"><col style="width:180px"><col style="width:220px"><col style="width:120px"><col style="width:120px"><col style="width:220px"><col style="width:220px"><col style="width:180px"><col style="width:220px"><col style="width:220px"><col style="width:220px"><col style="width:180px"><col style="width:220px"></colgroup><tbody><tr data-uid="d6d59ab8-6fc7-4614-9d35-ed8051f9cc32" role="row"><td style="text-align:center" role="gridcell"><a target="_blank" href="http://patientview.shtrhospital.com/Patient/VisitNumber/MjQ1MTM0NTE=" class="btn default btn-xs purple"><i class="fa fa-edit"></i>&nbsp;查看</a>&nbsp;</td><td role="gridcell">24513451</td><td role="gridcell">2001795212</td><td role="gridcell">0055366349</td><td role="gridcell"></td><td role="gridcell">孙伟                                              </td><td role="gridcell">本市医保</td><td role="gridcell">女</td><td role="gridcell">1965-01-09</td><td role="gridcell">53</td><td role="gridcell">31010719650109****</td><td role="gridcell">长宁区 华阳街道 长宁路 51****</td><td role="gridcell">1352450****</td><td role="gridcell">长宁区 华阳街道 长宁路 51****</td><td role="gridcell">1352450****</td><td role="gridcell">普通挂号</td><td role="gridcell">就诊结束</td><td role="gridcell">中医伤骨科    </td><td role="gridcell">中医科    </td><td role="gridcell">普通医保                      </td><td role="gridcell">    </td><td role="gridcell"></td><td admissiontime="true" role="gridcell">2018-10-18 16:30</td><td dischargetime="true" style="display:none" role="gridcell">2018-10-18 16:30</td><td dischargetime="true" style="display:none" role="gridcell"></td><td role="gridcell">关节痛</td></tr><tr class="k-alt" data-uid="4c058e1a-ad75-48fb-bb26-becabde4c68d" role="row"><td style="text-align:center" role="gridcell"><a target="_blank" href="http://patientview.shtrhospital.com/Patient/VisitNumber/MjQ1MTM0MDg=" class="btn default btn-xs purple"><i class="fa fa-edit"></i>&nbsp;查看</a>&nbsp;</td><td role="gridcell">24513408</td><td role="gridcell">2101795212</td><td role="gridcell">0055366349</td><td role="gridcell"></td><td role="gridcell">孙伟                                              </td><td role="gridcell">本市医保</td><td role="gridcell">女</td><td role="gridcell">1965-01-09</td><td role="gridcell">53</td><td role="gridcell">31010719650109****</td><td role="gridcell">长宁区 华阳街道 长宁路 51****</td><td role="gridcell">1352450****</td><td role="gridcell">长宁区 华阳街道 长宁路 51****</td><td role="gridcell">1352450****</td><td role="gridcell">普通挂号</td><td role="gridcell">就诊结束</td><td role="gridcell">神经内科      </td><td role="gridcell">神经内科  </td><td role="gridcell">特扶家庭(普通医保)            </td><td role="gridcell">    </td><td role="gridcell"></td><td admissiontime="true" role="gridcell">2018-10-18 16:20</td><td dischargetime="true" style="display:none" role="gridcell">2018-10-18 16:20</td><td dischargetime="true" style="display:none" role="gridcell"></td><td role="gridcell">颈动脉硬化</td></tr><tr data-uid="302a3d0e-ca32-4f2f-b72c-4f5aada3ce11" role="row"><td style="text-align:center" role="gridcell"><a target="_blank" href="http://patientview.shtrhospital.com/Patient/VisitNumber/MjQ1MTA0MTU=" class="btn default btn-xs purple"><i class="fa fa-edit"></i>&nbsp;查看</a>&nbsp;</td><td role="gridcell">24510415</td><td role="gridcell">1000752209</td><td role="gridcell">0002411282</td><td role="gridcell"></td><td role="gridcell">孙伟平                                            </td><td role="gridcell">本市医保</td><td role="gridcell">女</td><td role="gridcell">1953-07-16</td><td role="gridcell">65</td><td role="gridcell">36042619530716****</td><td role="gridcell">松江区 岳阳 青松石****</td><td role="gridcell">1530572****</td><td role="gridcell">松江区 岳阳 青松石****</td><td role="gridcell">1530572****</td><td role="gridcell">专家挂号</td><td role="gridcell">就诊结束</td><td role="gridcell">中医内科      </td><td role="gridcell">中医科    </td><td role="gridcell">普通医保                      </td><td role="gridcell">2997</td><td role="gridcell">刘占文  </td><td admissiontime="true" role="gridcell">2018-10-18 12:05</td><td dischargetime="true" style="display:none" role="gridcell">2018-10-18 12:05</td><td dischargetime="true" style="display:none" role="gridcell"></td><td role="gridcell">晕厥</td></tr><tr class="k-alt" data-uid="93aef5d6-17d5-430f-95dd-d4cacdf9e4f6" role="row"><td style="text-align:center" role="gridcell"><a target="_blank" href="http://patientview.shtrhospital.com/Patient/VisitNumber/MjQ1MDc2MTM=" class="btn default btn-xs purple"><i class="fa fa-edit"></i>&nbsp;查看</a>&nbsp;</td><td role="gridcell">24507613</td><td role="gridcell">2001647400</td><td role="gridcell">0001052367</td><td role="gridcell"></td><td role="gridcell">孙伟之                                            </td><td role="gridcell">本市医保</td><td role="gridcell">男</td><td role="gridcell">1963-03-11</td><td role="gridcell">55</td><td role="gridcell">31010519630311****</td><td role="gridcell">普陀区 长征镇 清峪路 81弄57号****</td><td role="gridcell"></td><td role="gridcell">普陀区 长征镇 清峪路 81弄57号****</td><td role="gridcell"></td><td role="gridcell">普通挂号</td><td role="gridcell">就诊结束</td><td role="gridcell">耳鼻喉科      </td><td role="gridcell">耳鼻咽喉科</td><td role="gridcell">普通医保                      </td><td role="gridcell">    </td><td role="gridcell"></td><td admissiontime="true" role="gridcell">2018-10-18 08:28</td><td dischargetime="true" style="display:none" role="gridcell">2018-10-18 08:28</td><td dischargetime="true" style="display:none" role="gridcell"></td><td role="gridcell">良性阵发性眩晕</td></tr></tbody></table></div><div data-role="pager" class="k-pager-wrap k-grid-pager k-widget"><a tabindex="-1" class="k-link k-state-disabled" data-page="1" href="#" title="首页"><span class="k-icon k-i-seek-w">seek-w</span></a><a tabindex="-1" class="k-link k-state-disabled" data-page="1" href="#" title="前页"><span class="k-icon k-i-arrow-w">arrow-w</span></a><ul class="k-pager-numbers k-reset"><li><span class="k-state-selected">1</span></li></ul><a tabindex="-1" class="k-link k-state-disabled" data-page="1" href="#" title="后页"><span class="k-icon k-i-arrow-e">arrow-e</span></a><a tabindex="-1" class="k-link k-state-disabled" data-page="1" href="#" title="末页"><span class="k-icon k-i-seek-e">seek-e</span></a><span class="k-pager-info k-label">显示条目 1 - 4 共 4</span></div></div><script>
+	
+jQuery(function()
+{jQuery("#gData").kendoGrid({"dataBound":gDataDataBound,"columns":
+[{"title":"操作","attributes":{"style":"text-
+align:center"},"width":"80px","template":"\u003ca target=\"_blank\" 
+href=\"/Patient/VisitNumber/#=VisitNumberEncoded#\" class=\"btn default 
+btn-xs purple\" \u003e\u003ci class=\"fa 
+fa-edit\"\u003e\u003c/i\u003e 查看\u003c/a
+\u003e ","field":"VisitNumberEncoded","filterable":{"messages":{"info":"
+显示符合以下条件的行","isTrue":"为真","isFalse":"为假","filter":"过滤","clear":"清除过
+滤","and":"并且","or":"或者","selectValue":"-选择值-"},"operators":{"string":
+{"eq":"等于","neq":"不等于","startswith":"开始于","endswith":"结束于","contains":"包
+含","doesnotcontain":"不包含"},"number":{"eq":"等于","neq":"不等于","gte":"大于或等
+于","gt":"大于","lte":"小于或等于","lt":"小于"},"date":{"eq":"等于","neq":"不等
+于","gte":"大于或等于","gt":"大于","lte":"小于或等于","lt":"小于"},"enums":{"eq":"等
+于","neq":"不等于"}}},"encoded":true},{"title":"挂号序号/住院
+号","width":"130px","field":"VisitNumber","filterable":{"messages":
+{"info":"显示符合以下条件的行","isTrue":"为真","isFalse":"为假","filter":"过
+滤","clear":"清除过滤","and":"并且","or":"或者","selectValue":"-选择值
+-"},"operators":{"string":{"eq":"等于","neq":"不等于","startswith":"开始
+于","endswith":"结束于","contains":"包含","doesnotcontain":"不包含"},"number":
+{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等于","lt":"小
+于"},"date":{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等
+于","lt":"小于"},"enums":{"eq":"等于","neq":"不等于"}}},"encoded":true},
+{"title":"门诊号/病人ID","width":"120px","field":"PatientID","filterable":
+{"messages":{"info":"显示符合以下条件的行","isTrue":"为真","isFalse":"为假","filter":"
+过滤","clear":"清除过滤","and":"并且","or":"或者","selectValue":"-选择值
+-"},"operators":{"string":{"eq":"等于","neq":"不等于","startswith":"开始
+于","endswith":"结束于","contains":"包含","doesnotcontain":"不包含"},"number":
+{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等于","lt":"小
+于"},"date":{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等
+于","lt":"小于"},"enums":{"eq":"等于","neq":"不等于"}}},"encoded":true},
+{"title":"EMPI","width":"120px","field":"Empid","filterable":
+{"messages":{"info":"显示符合以下条件的行","isTrue":"为真","isFalse":"为假","filter":"
+过滤","clear":"清除过滤","and":"并且","or":"或者","selectValue":"-选择值
+-"},"operators":{"string":{"eq":"等于","neq":"不等于","startswith":"开始
+于","endswith":"结束于","contains":"包含","doesnotcontain":"不包含"},"number":
+{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等于","lt":"小
+于"},"date":{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等
+于","lt":"小于"},"enums":{"eq":"等于","neq":"不等于"}}},"encoded":true},
+{"title":"病案号","width":"150px","field":"MRN","filterable":{"messages":
+{"info":"显示符合以下条件的行","isTrue":"为真","isFalse":"为假","filter":"过
+滤","clear":"清除过滤","and":"并且","or":"或者","selectValue":"-选择值
+-"},"operators":{"string":{"eq":"等于","neq":"不等于","startswith":"开始
+于","endswith":"结束于","contains":"包含","doesnotcontain":"不包含"},"number":
+{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等于","lt":"小
+于"},"date":{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等
+于","lt":"小于"},"enums":{"eq":"等于","neq":"不等于"}}},"encoded":true},
+{"title":"病人姓名","width":"150px","field":"PatientName","filterable":
+{"messages":{"info":"显示符合以下条件的行","isTrue":"为真","isFalse":"为假","filter":"
+过滤","clear":"清除过滤","and":"并且","or":"或者","selectValue":"-选择值
+-"},"operators":{"string":{"eq":"等于","neq":"不等于","startswith":"开始
+于","endswith":"结束于","contains":"包含","doesnotcontain":"不包含"},"number":
+{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等于","lt":"小
+于"},"date":{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等
+于","lt":"小于"},"enums":{"eq":"等于","neq":"不等于"}}},"encoded":true},
+{"title":"病人属性代
+码","width":"120px","field":"PatientSourceName","filterable":{"messages":
+{"info":"显示符合以下条件的行","isTrue":"为真","isFalse":"为假","filter":"过
+滤","clear":"清除过滤","and":"并且","or":"或者","selectValue":"-选择值
+-"},"operators":{"string":{"eq":"等于","neq":"不等于","startswith":"开始
+于","endswith":"结束于","contains":"包含","doesnotcontain":"不包含"},"number":
+{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等于","lt":"小
+于"},"date":{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等
+于","lt":"小于"},"enums":{"eq":"等于","neq":"不等于"}}},"encoded":true},
+{"title":"性别","width":"130px","field":"SexName","filterable":
+{"messages":{"info":"显示符合以下条件的行","isTrue":"为真","isFalse":"为假","filter":"
+过滤","clear":"清除过滤","and":"并且","or":"或者","selectValue":"-选择值
+-"},"operators":{"string":{"eq":"等于","neq":"不等于","startswith":"开始
+于","endswith":"结束于","contains":"包含","doesnotcontain":"不包含"},"number":
+{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等于","lt":"小
+于"},"date":{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等
+于","lt":"小于"},"enums":{"eq":"等于","neq":"不等于"}}},"encoded":true},
+{"title":"出生日期","width":"100px","field":"DOB","format":"{0:yyyy-MM-
+dd}","filterable":{"messages":{"info":"显示符合以下条件的行","isTrue":"为
+真","isFalse":"为假","filter":"过滤","clear":"清除过滤","and":"并且","or":"或
+者","selectValue":"-选择值-"},"operators":{"string":{"eq":"等于","neq":"不等
+于","startswith":"开始于","endswith":"结束于","contains":"包
+含","doesnotcontain":"不包含"},"number":{"eq":"等于","neq":"不等于","gte":"大于或等
+于","gt":"大于","lte":"小于或等于","lt":"小于"},"date":{"eq":"等于","neq":"不等
+于","gte":"大于或等于","gt":"大于","lte":"小于或等于","lt":"小于"},"enums":{"eq":"等
+于","neq":"不等于"}}},"encoded":true},{"title":"就诊年
+龄","width":"100px","field":"PatientAge","filterable":{"messages":
+{"info":"显示符合以下条件的行","isTrue":"为真","isFalse":"为假","filter":"过
+滤","clear":"清除过滤","and":"并且","or":"或者","selectValue":"-选择值
+-"},"operators":{"string":{"eq":"等于","neq":"不等于","startswith":"开始
+于","endswith":"结束于","contains":"包含","doesnotcontain":"不包含"},"number":
+{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等于","lt":"小
+于"},"date":{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等
+于","lt":"小于"},"enums":{"eq":"等于","neq":"不等于"}}},"encoded":true},
+{"title":"身份证号","width":"180px","field":"SSN","filterable":{"messages":
+{"info":"显示符合以下条件的行","isTrue":"为真","isFalse":"为假","filter":"过
+滤","clear":"清除过滤","and":"并且","or":"或者","selectValue":"-选择值
+-"},"operators":{"string":{"eq":"等于","neq":"不等于","startswith":"开始
+于","endswith":"结束于","contains":"包含","doesnotcontain":"不包含"},"number":
+{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等于","lt":"小
+于"},"date":{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等
+于","lt":"小于"},"enums":{"eq":"等于","neq":"不等于"}}},"encoded":true},
+{"title":"地址","width":"220px","field":"Address","filterable":
+{"messages":{"info":"显示符合以下条件的行","isTrue":"为真","isFalse":"为假","filter":"
+过滤","clear":"清除过滤","and":"并且","or":"或者","selectValue":"-选择值
+-"},"operators":{"string":{"eq":"等于","neq":"不等于","startswith":"开始
+于","endswith":"结束于","contains":"包含","doesnotcontain":"不包含"},"number":
+{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等于","lt":"小
+于"},"date":{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等
+于","lt":"小于"},"enums":{"eq":"等于","neq":"不等于"}}},"encoded":true},
+{"title":"联系电话","width":"180px","field":"ContactPhone","filterable":
+{"messages":{"info":"显示符合以下条件的行","isTrue":"为真","isFalse":"为假","filter":"
+过滤","clear":"清除过滤","and":"并且","or":"或者","selectValue":"-选择值
+-"},"operators":{"string":{"eq":"等于","neq":"不等于","startswith":"开始
+于","endswith":"结束于","contains":"包含","doesnotcontain":"不包含"},"number":
+{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等于","lt":"小
+于"},"date":{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等
+于","lt":"小于"},"enums":{"eq":"等于","neq":"不等于"}}},"encoded":true},
+{"title":"住宅地址","width":"220px","field":"HomeAddress","filterable":
+{"messages":{"info":"显示符合以下条件的行","isTrue":"为真","isFalse":"为假","filter":"
+过滤","clear":"清除过滤","and":"并且","or":"或者","selectValue":"-选择值
+-"},"operators":{"string":{"eq":"等于","neq":"不等于","startswith":"开始
+于","endswith":"结束于","contains":"包含","doesnotcontain":"不包含"},"number":
+{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等于","lt":"小
+于"},"date":{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等
+于","lt":"小于"},"enums":{"eq":"等于","neq":"不等于"}}},"encoded":true},
+{"title":"住宅电话","width":"120px","field":"HomePhone","filterable":
+{"messages":{"info":"显示符合以下条件的行","isTrue":"为真","isFalse":"为假","filter":"
+过滤","clear":"清除过滤","and":"并且","or":"或者","selectValue":"-选择值
+-"},"operators":{"string":{"eq":"等于","neq":"不等于","startswith":"开始
+于","endswith":"结束于","contains":"包含","doesnotcontain":"不包含"},"number":
+{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等于","lt":"小
+于"},"date":{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等
+于","lt":"小于"},"enums":{"eq":"等于","neq":"不等于"}}},"encoded":true},
+{"title":"挂号类
+型","width":"120px","field":"RegisterCategoryName","filterable":
+{"messages":{"info":"显示符合以下条件的行","isTrue":"为真","isFalse":"为假","filter":"
+过滤","clear":"清除过滤","and":"并且","or":"或者","selectValue":"-选择值
+-"},"operators":{"string":{"eq":"等于","neq":"不等于","startswith":"开始
+于","endswith":"结束于","contains":"包含","doesnotcontain":"不包含"},"number":
+{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等于","lt":"小
+于"},"date":{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等
+于","lt":"小于"},"enums":{"eq":"等于","neq":"不等于"}}},"encoded":true},
+{"title":"状态代码","width":"220px","field":"StatusName","filterable":
+{"messages":{"info":"显示符合以下条件的行","isTrue":"为真","isFalse":"为假","filter":"
+过滤","clear":"清除过滤","and":"并且","or":"或者","selectValue":"-选择值
+-"},"operators":{"string":{"eq":"等于","neq":"不等于","startswith":"开始
+于","endswith":"结束于","contains":"包含","doesnotcontain":"不包含"},"number":
+{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等于","lt":"小
+于"},"date":{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等
+于","lt":"小于"},"enums":{"eq":"等于","neq":"不等于"}}},"encoded":true},
+{"title":"科别名
+称","width":"220px","field":"ServiceProviderDeptName","filterable":
+{"messages":{"info":"显示符合以下条件的行","isTrue":"为真","isFalse":"为假","filter":"
+过滤","clear":"清除过滤","and":"并且","or":"或者","selectValue":"-选择值
+-"},"operators":{"string":{"eq":"等于","neq":"不等于","startswith":"开始
+于","endswith":"结束于","contains":"包含","doesnotcontain":"不包含"},"number":
+{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等于","lt":"小
+于"},"date":{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等
+于","lt":"小于"},"enums":{"eq":"等于","neq":"不等于"}}},"encoded":true},
+{"title":"科室名
+称","width":"180px","field":"HospitalServiceName","filterable":
+{"messages":{"info":"显示符合以下条件的行","isTrue":"为真","isFalse":"为假","filter":"
+过滤","clear":"清除过滤","and":"并且","or":"或者","selectValue":"-选择值
+-"},"operators":{"string":{"eq":"等于","neq":"不等于","startswith":"开始
+于","endswith":"结束于","contains":"包含","doesnotcontain":"不包含"},"number":
+{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等于","lt":"小
+于"},"date":{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等
+于","lt":"小于"},"enums":{"eq":"等于","neq":"不等于"}}},"encoded":true},
+{"title":"医保类型名
+称","width":"220px","field":"MedicareCategoryName","filterable":
+{"messages":{"info":"显示符合以下条件的行","isTrue":"为真","isFalse":"为假","filter":"
+过滤","clear":"清除过滤","and":"并且","or":"或者","selectValue":"-选择值
+-"},"operators":{"string":{"eq":"等于","neq":"不等于","startswith":"开始
+于","endswith":"结束于","contains":"包含","doesnotcontain":"不包含"},"number":
+{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等于","lt":"小
+于"},"date":{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等
+于","lt":"小于"},"enums":{"eq":"等于","neq":"不等于"}}},"encoded":true},
+{"title":"医生工号","width":"220px","field":"DoctorID","filterable":
+{"messages":{"info":"显示符合以下条件的行","isTrue":"为真","isFalse":"为假","filter":"
+过滤","clear":"清除过滤","and":"并且","or":"或者","selectValue":"-选择值
+-"},"operators":{"string":{"eq":"等于","neq":"不等于","startswith":"开始
+于","endswith":"结束于","contains":"包含","doesnotcontain":"不包含"},"number":
+{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等于","lt":"小
+于"},"date":{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等
+于","lt":"小于"},"enums":{"eq":"等于","neq":"不等于"}}},"encoded":true},
+{"title":"医生姓名","width":"220px","field":"DoctorName","filterable":
+{"messages":{"info":"显示符合以下条件的行","isTrue":"为真","isFalse":"为假","filter":"
+过滤","clear":"清除过滤","and":"并且","or":"或者","selectValue":"-选择值
+-"},"operators":{"string":{"eq":"等于","neq":"不等于","startswith":"开始
+于","endswith":"结束于","contains":"包含","doesnotcontain":"不包含"},"number":
+{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等于","lt":"小
+于"},"date":{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等
+于","lt":"小于"},"enums":{"eq":"等于","neq":"不等于"}}},"encoded":true},
+{"title":"挂号时间","attributes":
+{"AdmissionTime":"true"},"width":"180px","field":"AdmissionTime","format":"{0:yyyy-MM-dd
+ 
+HH:mm}","filterable":{"messages":{"info":"显示符合以下条件的行","isTrue":"为
+真","isFalse":"为假","filter":"过滤","clear":"清除过滤","and":"并且","or":"或
+者","selectValue":"-选择值-"},"operators":{"string":{"eq":"等于","neq":"不等
+于","startswith":"开始于","endswith":"结束于","contains":"包
+含","doesnotcontain":"不包含"},"number":{"eq":"等于","neq":"不等于","gte":"大于或等
+于","gt":"大于","lte":"小于或等于","lt":"小于"},"date":{"eq":"等于","neq":"不等
+于","gte":"大于或等于","gt":"大于","lte":"小于或等于","lt":"小于"},"enums":{"eq":"等
+于","neq":"不等于"}}},"encoded":true},{"title":"入院时间","attributes":
+{"DischargeTime":"true"},"hidden":true,"width":"180px","field":"AdmissionTime","format":"{0:yyyy-MM-dd
+ 
+HH:mm}","filterable":{"messages":{"info":"显示符合以下条件的行","isTrue":"为
+真","isFalse":"为假","filter":"过滤","clear":"清除过滤","and":"并且","or":"或
+者","selectValue":"-选择值-"},"operators":{"string":{"eq":"等于","neq":"不等
+于","startswith":"开始于","endswith":"结束于","contains":"包
+含","doesnotcontain":"不包含"},"number":{"eq":"等于","neq":"不等于","gte":"大于或等
+于","gt":"大于","lte":"小于或等于","lt":"小于"},"date":{"eq":"等于","neq":"不等
+于","gte":"大于或等于","gt":"大于","lte":"小于或等于","lt":"小于"},"enums":{"eq":"等
+于","neq":"不等于"}}},"encoded":true},{"title":"出院时间","attributes":
+{"DischargeTime":"true"},"hidden":true,"width":"180px","field":"DischargeTime","format":"{0:yyyy-MM-dd
+ 
+HH:mm}","filterable":{"messages":{"info":"显示符合以下条件的行","isTrue":"为
+真","isFalse":"为假","filter":"过滤","clear":"清除过滤","and":"并且","or":"或
+者","selectValue":"-选择值-"},"operators":{"string":{"eq":"等于","neq":"不等
+于","startswith":"开始于","endswith":"结束于","contains":"包
+含","doesnotcontain":"不包含"},"number":{"eq":"等于","neq":"不等于","gte":"大于或等
+于","gt":"大于","lte":"小于或等于","lt":"小于"},"date":{"eq":"等于","neq":"不等
+于","gte":"大于或等于","gt":"大于","lte":"小于或等于","lt":"小于"},"enums":{"eq":"等
+于","neq":"不等于"}}},"encoded":true},{"title":"诊断名
+称","width":"220px","field":"OPDDiagnosis","filterable":{"messages":
+{"info":"显示符合以下条件的行","isTrue":"为真","isFalse":"为假","filter":"过
+滤","clear":"清除过滤","and":"并且","or":"或者","selectValue":"-选择值
+-"},"operators":{"string":{"eq":"等于","neq":"不等于","startswith":"开始
+于","endswith":"结束于","contains":"包含","doesnotcontain":"不包含"},"number":
+{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等于","lt":"小
+于"},"date":{"eq":"等于","neq":"不等于","gte":"大于或等于","gt":"大于","lte":"小于或等
+于","lt":"小于"},"enums":{"eq":"等于","neq":"不等
+于"}}},"encoded":true}],"pageable":{"buttonCount":10,"messages":
+{"display":"显示条目 {0} - {1} 共 {2}","empty":"没有可显示的记录。","page":"页","of":"共
+ 
+{0}","first":"首页","previous":"前页","next":"后页","last":"末页","refresh":"刷
+新"}},"resizable":true,"dataSource":{"transport":{"prefix":"","read":{"url":"/Home/GetPagedPatientList","data":getGDataParam}},"pageSize":20,"page":1,"total":0,"serverPaging":true,"serverSorting":true,"serverFiltering":true,"serverGrouping":true,"serverAggregates":true,"type":"aspnetmvc-ajax","filter":[],"schema":{"data":"Data","total":"Total","errors":"Errors","model":{"fields":{"VisitNumberEncoded":{"type":"string"},"VisitNumber":{"type":"string"},"PatientID":{"type":"string"},"MRN":{"type":"string"},"PatientName":{"type":"string"},"Empid":{"type":"string"},"PatientSourceCode":{"type":"number","defaultValue":null},"PatientAge":{"type":"number","defaultValue":null},"Sex":{"type":"string"},"DOB":{"type":"date","defaultValue":null},"SSN":{"type":"string"},"Address":{"type":"string"},"ContactPhone":{"type":"string"},"HomeAddress":{"type":"string"},"HomePhone":{"type":"string"},"RegisterCategory":{"type":"string"},"Status":{"type":"number","defaultValue":null},"ServiceProviderDeptCode":{"type":"string"},"ServiceProviderDeptName":{"type":"string"},"AdmissionHospitalServiceCode":{"type":"string"},"AdmissionHospitalServiceName":{"type":"string"},"HospitalServiceCode":{"type":"string"},"HospitalServiceName":{"type":"string"},"LocationUnitCode":{"type":"string"},"LocationUnitName":{"type":"string"},"AdmissionLocationUnitCode":{"type":"string"},"AdmissionLocationUnitName":{"type":"string"},"MedicareCategoryCode":{"type":"string"},"MedicareCategoryName":{"type":"string"},"DoctorID":{"type":"string"},"NursingGradeCode":{"type":"string"},"NursingGradeName":{"type":"string"},"EpisodeGradeCode":{"type":"string"},"EpisodeGradeName":{"type":"string"},"BedNo":{"type":"string"},"DoctorName":{"type":"string"},"AdmissionTime":{"type":"date","defaultValue":null},"OPDDiagnosis":{"type":"string"},"AdmissionDiagnosis":{"type":"string"},"AdmissionWeight":{"type":"string"},"DischargeTime":{"type":"date","defaultValue":null},"DischargeDiagnosis":{"type":"string"},"AccountStatus":{"type":"number","defaultValue":null},"PrePaymentAmount":{"type":"number"},"PaymentAmount":{"type":"number"},"CardNo":{"type":"string"},"DiagnoseTime":{"type":"date","defaultValue":null},"Type":{"type":"number","defaultValue":null},"PatientSourceName":{"editable":false,"type":"string"},"SexName":{"editable":false,"type":"string"},"Age":{"editable":false,"type":"string"},"AdmissionAge":{"editable":false,"type":"string"},"RegisterCategoryName":{"editable":false,"type":"string"},"StatusName":{"editable":false,"type":"string"},"AdmissionTimeWithDiaginosis":{"type":"string"},"DiagnosisWithUnitName":{"editable":false,"type":"string"},"Diagnosis":{"editable":false,"type":"string"}}}}}});});
+</script>
+
+    </div>
+    <div id="search_Info" style=" height:40px;">
+
+    </div>
+</div>
+
+    </div>
+    <!-- 提示框 -->
+    <div class="modal fade" id="modalAlert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    ×
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    提示
+                </h4>
+            </div>
+            <div class="modal-body" id="alertBody">
+            </div>
+            <div class="modal-footer" id="modal_footer" style="text-align:center;">
+                <button type="button" class="btn btn-primary" id="alter_footerConfirm">确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="alter_footerCancel">取消</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+
+
+
+
+<div class="daterangepicker dropdown-menu ltr show-calendar opensright"><div class="ranges"><ul><li data-range-key="今天">今天</li><li data-range-key="昨天">昨天</li><li data-range-key="最近7天">最近7天</li><li data-range-key="最近30天">最近30天</li><li data-range-key="本月">本月</li><li data-range-key="上月">上月</li><li data-range-key="本年">本年</li></ul><div class="range_inputs"><button class="applyBtn btn btn-sm btn-primary" disabled="disabled" type="button">选择</button> <button class="cancelBtn btn btn-sm btn-default" type="button">取消</button></div></div><div class="calendar left"><div class="daterangepicker_input"><input class="input-mini form-control" name="daterangepicker_start" type="text"><i class="fa fa-calendar glyphicon glyphicon-calendar"></i><div style="display: none;" class="calendar-time"><div></div><i class="fa fa-clock-o glyphicon glyphicon-time"></i></div></div><div class="calendar-table"></div></div><div class="calendar right"><div class="daterangepicker_input"><input class="input-mini form-control" name="daterangepicker_end" type="text"><i class="fa fa-calendar glyphicon glyphicon-calendar"></i><div style="display: none;" class="calendar-time"><div></div><i class="fa fa-clock-o glyphicon glyphicon-time"></i></div></div><div class="calendar-table"></div></div></div><div style="width: 122px; height: 60px; margin-left: -2px; padding-left: 2px; padding-right: 2px; padding-bottom: 4px; overflow: hidden; display: none; position: absolute; top: 91px; z-index: 10002; left: 89px;" class="k-animation-container km-popup"><div style="display: none; height: auto; font-family: &quot;Segoe UI&quot;,&quot;Segoe WP&quot;,&quot;Helvetica Neue&quot;,sans-serif; font-size: 14px; font-stretch: normal; font-style: normal; font-weight: 400; line-height: 20px; width: 116px; position: absolute; transform: translateY(-60px);" data-role="popup" id="change_Type_home-list" class="k-list-container k-popup k-group k-reset"><ul aria-live="off" id="change_Type_home_listbox" aria-hidden="true" role="listbox" tabindex="-1" style="overflow: auto;" unselectable="on" class="k-list k-reset"><li aria-selected="true" id="change_Type_home_option_selected" tabindex="-1" role="option" unselectable="on" class="k-item k-state-selected k-state-focused">门急诊病人</li><li tabindex="-1" role="option" unselectable="on" class="k-item">住院病人</li></ul></div></div></body></html>
