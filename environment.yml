@@ -9,3 +9,5 @@ dependencies:
     - matplotlib
     - pandas  
     - beautifulsoup4
+    - jupyter_contrib_nbextensions
+    - jupyter_nbextensions_configurator
